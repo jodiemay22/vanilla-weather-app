@@ -16,9 +16,15 @@ li {
   background-color: #ecf2f9;
 }
 .location-time {
-  line-height: 50px;
-  margin: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border: 2px solid #f0d9da;
+  border-radius: 40px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
 }
 .city {
   font-size: 50px;
@@ -28,19 +34,33 @@ li {
   font-style: italic;
   font-weight: 500;
 }
-.current-date {
-  font-size: 35px;
+
+.current-time {
+  font-weight: bold;
 }
 
 .current-temp {
+  font-size: 50px;
   border: 2px solid #f0d9da;
+  border-radius: 40px;
   margin: 10px;
+  text-align: center;
+}
+.units {
+  font-size: 15px;
 }
 .current-details {
   border: 2px solid #f0d9da;
+  border-radius: 40px;
   margin: 10px;
+  text-align: center;
+}
+.current-details li {
+  font-style: italic;
 }
 .projected-forecast {
   border: 2px solid #f0d9da;
+  border-radius: 40px;
   margin: 10px;
+  text-align: center;
 }
