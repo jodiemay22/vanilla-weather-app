@@ -13,7 +13,7 @@ li {
 .weather-app {
   border: 5px solid #c8d9eb;
   padding: 30px;
-  background-color: #ecf2f9;
+  background-color: white;
 }
 .search-element {
   background-color: #f9ecec;
@@ -60,7 +60,7 @@ li {
   font-style: italic;
 }
 .projected-forecast {
-  border: 2px solid #f0d9da;
+  border: 2px solid #c8d9eb;
   border-radius: 40px;
   margin: 10px;
   text-align: center;
