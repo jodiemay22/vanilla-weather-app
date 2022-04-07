@@ -29,7 +29,7 @@ function displayForecast(response) {
   tempElement.innerHTML = Math.round(response.data.main.temp);
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   humidityElement.innerHTML = response.data.main.humidity;
-  windSpeedElement.innerHTML = response.data.wind.speed;
+  windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
