@@ -18,6 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -34,19 +35,22 @@
           </form>
           <div class="location-time row">
             <ul class="col">
-              <li class="city">London</li>
-              <li class="state">Greater London, England</li>
+              <li class="city" id="city-element"></li>
+              <li class="state" id="country-element"></li>
               <li class="current-time">Sunday 7/5/22 07:30</li>
             </ul>
           </div>
           <div class="forecast row">
             <ul class="col current-temp">
-              <li>🌞17<span class="units">℃ | ℉</span></li>
+              <li>
+                🌞<span id="temp-element"></span
+                ><span class="units"> ℃ | ℉</span>
+              </li>
             </ul>
             <ul class="col current-details">
-              <li>Feels like: 6℃</li>
-              <li>Humidity:</li>
-              <li>Wind Speed:</li>
+              <li>Feels like: <span id="feels-like"></span>℃</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind Speed: <span id="wind-speed"></span> m/s</li>
             </ul>
           </div>
 
