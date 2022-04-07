@@ -24,14 +24,15 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <form action="" class="row">
-            <input type="text" class="col-8 text-input" />
-            <input type="button" value="Search" class="col-3 search-element" />
-            <input
+          <form action="" class="row" id="search-form">
+            <div class="col-1"> <input
               type="button"
               value="📍"
-              class="col-1 current-location-element"
-            />
+              class="current-location-element btn btn-light"
+            /></div>
+            <div class="col-7"> <input type="search" placeholder="Search a city" class="form-control" id="city-input" /></div>
+           <div class="col-4"></div>
+           
           </form>
           <div class="location-time row">
             <ul class="col">
