@@ -5,6 +5,7 @@ body {
 li {
   list-style: none;
 }
+
 .weather-app-wrapper {
   max-width: 700px;
   margin: 100px auto;
@@ -13,4 +14,33 @@ li {
   border: 5px solid #c8d9eb;
   padding: 30px;
   background-color: #ecf2f9;
+}
+.location-time {
+  line-height: 50px;
+  margin: 10px;
+  border: 2px solid #f0d9da;
+}
+.city {
+  font-size: 50px;
+  font-weight: 800;
+}
+.state {
+  font-style: italic;
+  font-weight: 500;
+}
+.current-date {
+  font-size: 35px;
+}
+
+.current-temp {
+  border: 2px solid #f0d9da;
+  margin: 10px;
+}
+.current-details {
+  border: 2px solid #f0d9da;
+  margin: 10px;
+}
+.projected-forecast {
+  border: 2px solid #f0d9da;
+  margin: 10px;
 }
