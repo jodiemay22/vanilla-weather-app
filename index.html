@@ -11,38 +11,45 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <form action="" class="row">
-          <input type="text" class="col" />
-          <input type="button" value="Search" class="col" />
-          <input type="button" value="📍" class="col" />
-        </form>
-        <div class="location-time row">
-          <ul class="col">
-            <li>London,</li>
-            <li>London</li>
-          </ul>
-          <ul class="col">
-            <li>Sunday</li>
-            <li>07:30</li>
-          </ul>
-        </div>
-        <div class="forecast row">
-          <ul class="col">
-            <li>🌞</li>
-            <li>17℃</li>
-            <span> <button>℉</button></span>
-          </ul>
-          <ul class="col">
-            <li>Feels like: 6℃</li>
-            <li>Humidity</li>
-            <li>Wind Speed</li>
-          </ul>
-        </div>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <form action="" class="row">
+            <input type="text" class="col" />
+            <input type="button" value="Search" class="col" />
+            <input type="button" value="📍" class="col" />
+          </form>
+          <div class="location-time row">
+            <ul class="col">
+              <li class="city">London,</li>
+              <li class="state">London</li>
+            </ul>
+            <ul class="col">
+              <li>Sunday</li>
+              <li>07:30</li>
+            </ul>
+          </div>
+          <div class="forecast row">
+            <ul class="col">
+              <li>🌞</li>
+              <li>17℃</li>
+              <span> <button>℉</button></span>
+            </ul>
+            <ul class="col">
+              <li>Feels like: 6℃</li>
+              <li>Humidity</li>
+              <li>Wind Speed</li>
+            </ul>
+          </div>
           <hr />
           <div class="5-day-forecast row">
             <ul class="col">
@@ -50,35 +57,39 @@
               <li>🌞</li>
               <li>17</li>
             </ul>
-          
-          <ul class="col">
-            <li>Monday</li>
-            <li>🌞</li>
-            <li>17</li>
-          </ul>
-          <ul class="col">
-            <li>Monday</li>
-            <li>🌞</li>
-            <li>17</li>
-          </ul>
-          <ul class="col">
-            <li>Monday</li>
-            <li>🌞</li>
-            <li>17</li>
-          </ul>
-          <ul class="col">
-            <li>Monday</li>
-            <li>🌞</li>
-            <li>17</li>
-          </ul>
+
+            <ul class="col">
+              <li>Monday</li>
+              <li>🌞</li>
+              <li>17</li>
+            </ul>
+            <ul class="col">
+              <li>Monday</li>
+              <li>🌞</li>
+              <li>17</li>
+            </ul>
+            <ul class="col">
+              <li>Monday</li>
+              <li>🌞</li>
+              <li>17</li>
+            </ul>
+            <ul class="col">
+              <li>Monday</li>
+              <li>🌞</li>
+              <li>17</li>
+            </ul>
+          </div>
         </div>
         <small>
-        <a href="https://github.com/jodiemay22/vanilla-weather-app"target="_blank">Open Source Code</a> by Jodie Lancaster
-      </small>
-        </div>
-
-        <script src="src/index.js"></script>
+          <a
+            href="https://github.com/jodiemay22/vanilla-weather-app"
+            target="_blank"
+            >Open Source Code</a
+          >
+          by Jodie Lancaster
+        </small>
       </div>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
