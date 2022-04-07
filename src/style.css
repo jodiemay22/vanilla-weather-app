@@ -15,6 +15,12 @@ li {
   padding: 30px;
   background-color: #ecf2f9;
 }
+.search-element {
+  background-color: #f9ecec;
+}
+.current-location-element {
+  background-color: #f9ecec;
+}
 .location-time {
   margin-left: 50px;
   margin-right: 50px;
