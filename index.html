@@ -29,8 +29,9 @@
               type="button"
               value="📍"
               class="current-location-element btn btn-light"
+              id="current-location"
             /></div>
-            <div class="col-7"> <input type="search" placeholder="Search a city" class="form-control" id="city-input" /></div>
+            <div class="col-7"> <input type="search" placeholder="Search a city" class="form-control" id="city-input" autocomplete="off" /></div>
            <div class="col-4"></div>
            
           </form>
@@ -45,7 +46,9 @@
             <ul class="col current-temp">
               <li>
                 <img src="" alt="" id="icon"></span><span id="temp-element"></span
-                ><span class="units"> ℃ | ℉</span>
+                ><span class="units"><button type="button" class="btn btn-default btn-circle celcius" id="celcius">C
+                    </button> | <button type="button" class="btn btn-default btn-circle" id="farenheit">F
+                    </button></span>
               </li>
             </ul>
             <ul class="col current-details">

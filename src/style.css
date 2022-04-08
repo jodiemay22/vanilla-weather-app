@@ -21,6 +21,10 @@ li {
 .current-location-element {
   background-color: #f9ecec;
 }
+.current-location-element:hover {
+  border: 2px solid #c8d9eb;
+  transition: 0.2s ease-in-out;
+}
 .location-time {
   margin-left: 50px;
   margin-right: 50px;
@@ -51,6 +55,24 @@ li {
 }
 .units {
   font-size: 15px;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+  background-color: #f9ecec;
+}
+.btn-circle:hover {
+  border: 2px solid #c8d9eb;
+  transition: 0.2s ease-in-out;
+  background-color: #ecf2f9;
+}
+.celcius {
+  margin-left: 5px;
 }
 .current-details {
   margin: 10px;

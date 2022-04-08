@@ -1,3 +1,4 @@
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
@@ -49,5 +50,29 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
+function showPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKeyGeo = "120813c35ed58ddba478b72f03dd1a3e";
+  let apiURLGeo = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKeyGeo}&units=metric`;
+  axios.get(apiURLGeo).then(displayForecast);
+}
+
+function getPosition() {
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+function displayFarenheitTemp(event) {
+    event.preventDefault();
+    let tempElement = document.querySelector("#temp-element");
+    tempElement.innerHTML = 
+}
+
 let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", handleSubmit);
+
+let currentLocationElement = document.querySelector("#current-location");
+currentLocationElement.addEventListener("click", getPosition);
+
+let farenheitElement = document.querySelector("#farenheit");
+farenheitElement.addEventListener("click" displayFarenheitTemp);
