@@ -1,4 +1,3 @@
-
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
@@ -17,6 +16,7 @@ function formatDate(timestamp) {
 }
 
 function displayForecast(response) {
+  console.log(response);
   let cityElement = document.querySelector("#city-element");
   let countryElement = document.querySelector("#country-element");
   let tempElement = document.querySelector("#temp-element");
@@ -25,10 +25,14 @@ function displayForecast(response) {
   let windSpeedElement = document.querySelector("#wind-speed");
   let dateElement = document.querySelector("#current-date");
   let iconElement = document.querySelector("#icon");
+
+  celciusTemp = response.data.main.temp;
+  celciusFeelsLike = response.data.main.feels_like;
+
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
   tempElement.innerHTML = Math.round(response.data.main.temp);
-  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
+  feelsLikeElement.innerHTML = `${Math.round(response.data.main.feels_like)}℃`;
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -63,10 +67,25 @@ function getPosition() {
 }
 
 function displayFarenheitTemp(event) {
-    event.preventDefault();
-    let tempElement = document.querySelector("#temp-element");
-    tempElement.innerHTML = 
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp-element");
+  let feelsLikeElement = document.querySelector("#feels-like");
+  tempElement.innerHTML = Math.round((celciusTemp * 9) / 5 + 32);
+  feelsLikeElement.innerHTML = `${Math.round(
+    (celciusFeelsLike * 9) / 5 + 32
+  )} ℉`;
 }
+
+function displayCelciusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temp-element");
+  let feelsLikeElement = document.querySelector("#feels-like");
+  tempElement.innerHTML = Math.round(celciusTemp);
+  feelsLikeElement.innerHTML = `${Math.round(celciusFeelsLike)}℃`;
+}
+
+let celciusTemp = null;
+let celciusFeelsLike = null;
 
 let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", handleSubmit);
@@ -75,4 +94,7 @@ let currentLocationElement = document.querySelector("#current-location");
 currentLocationElement.addEventListener("click", getPosition);
 
 let farenheitElement = document.querySelector("#farenheit");
-farenheitElement.addEventListener("click" displayFarenheitTemp);
+farenheitElement.addEventListener("click", displayFarenheitTemp);
+
+let celciusElement = document.querySelector("#celcius");
+celciusElement.addEventListener("click", displayCelciusTemp);
