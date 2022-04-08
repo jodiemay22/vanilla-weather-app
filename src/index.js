@@ -20,6 +20,7 @@ function displayForecast(response) {
   let cityElement = document.querySelector("#city-element");
   let countryElement = document.querySelector("#country-element");
   let tempElement = document.querySelector("#temp-element");
+  let descriptionElement = document.querySelector("#description");
   let feelsLikeElement = document.querySelector("#feels-like");
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#wind-speed");
@@ -32,6 +33,7 @@ function displayForecast(response) {
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
   tempElement.innerHTML = Math.round(response.data.main.temp);
+  descriptionElement.innerHTML = response.data.weather[0].description;
   feelsLikeElement.innerHTML = `${Math.round(response.data.main.feels_like)}℃`;
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
