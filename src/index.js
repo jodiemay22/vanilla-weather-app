@@ -9,9 +9,15 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
   let day = days[date.getDay()];
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -32,7 +38,7 @@ function displayForecast(response) {
 
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+  tempElement.innerHTML = `${Math.round(response.data.main.temp)}°`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   feelsLikeElement.innerHTML = `${Math.round(response.data.main.feels_like)}℃`;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -42,6 +48,23 @@ function displayForecast(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+}
+
+function displayProjectedForecast() {
+  let projectedForecastElement = document.querySelector("#projected-forecast");
+  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri"];
+  let projectedForecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    projectedForecastHTML =
+      projectedForecastHTML +
+      `<ul class="col projected-forecast">
+         <li>${day}</li>
+         <li>🌞</li>
+         <li>17</li>
+        </ul>`;
+  });
+  projectedForecastHTML = projectedForecastHTML + `</div>`;
+  projectedForecastElement.innerHTML = projectedForecastHTML;
 }
 
 function search(city) {
@@ -85,6 +108,8 @@ function displayCelciusTemp(event) {
   tempElement.innerHTML = Math.round(celciusTemp);
   feelsLikeElement.innerHTML = `${Math.round(celciusFeelsLike)}℃`;
 }
+
+displayProjectedForecast();
 
 let celciusTemp = null;
 let celciusFeelsLike = null;
