@@ -32,12 +32,9 @@ function displayWeather(response) {
   let dateElement = document.querySelector("#current-date");
   let iconElement = document.querySelector("#icon");
 
-  celciusTemp = response.data.main.temp;
-  celciusFeelsLike = response.data.main.feels_like;
-
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
-  tempElement.innerHTML = `${Math.round(response.data.main.temp)}°`;
+  tempElement.innerHTML = `${Math.round(response.data.main.temp)}℃`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   feelsLikeElement.innerHTML = `${Math.round(response.data.main.feels_like)}℃`;
   humidityElement.innerHTML = response.data.main.humidity;
@@ -106,35 +103,8 @@ function getPosition() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-function displayFarenheitTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp-element");
-  let feelsLikeElement = document.querySelector("#feels-like");
-  tempElement.innerHTML = Math.round((celciusTemp * 9) / 5 + 32);
-  feelsLikeElement.innerHTML = `${Math.round(
-    (celciusFeelsLike * 9) / 5 + 32
-  )} ℉`;
-}
-
-function displayCelciusTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp-element");
-  let feelsLikeElement = document.querySelector("#feels-like");
-  tempElement.innerHTML = Math.round(celciusTemp);
-  feelsLikeElement.innerHTML = `${Math.round(celciusFeelsLike)}℃`;
-}
-
-let celciusTemp = null;
-let celciusFeelsLike = null;
-
 let formElement = document.querySelector("#search-form");
 formElement.addEventListener("submit", handleSubmit);
 
 let currentLocationElement = document.querySelector("#current-location");
 currentLocationElement.addEventListener("click", getPosition);
-
-let farenheitElement = document.querySelector("#farenheit");
-farenheitElement.addEventListener("click", displayFarenheitTemp);
-
-let celciusElement = document.querySelector("#celcius");
-celciusElement.addEventListener("click", displayCelciusTemp);
