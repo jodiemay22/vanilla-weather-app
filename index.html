@@ -25,31 +25,31 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <form action="" class="row" id="search-form">
-            <div class="col-1"> <input
+            <div class="col-1 button-location"> <input
               type="button"
               value="📍"
               class="current-location-element btn btn-light"
               id="current-location"
             /></div>
-            <div class="col-7"> <input type="search" placeholder="Search a city" class="form-control" id="city-input" autocomplete="off" /></div>
-           <div class="col-4"></div>
-           
+            <div class="col-7 search-bar"> <input type="search" placeholder="Search a city" class="form-control" id="city-input" autocomplete="off" /></div>
           </form>
           <div class="location-time row">
             <ul class="col">
-              <li class="city" id="city-element"></li>
+              <li>
+                <h1 class="city" id="city-element"></h1>
+              </li>
               <li class="state" id="country-element"></li>
               <li>Last updated at: <span id="current-date"></span></li>
             </ul>
           </div>
           <div class="forecast row">
-            <ul class="col ">
+            <ul class="col-sm ">
               <li class="current-temp">
                 <img src="" alt="" id="icon"></span><span id="temp-element"></span
                 >
               </li>
             </ul>
-            <ul class="col current-details">
+            <ul class="col-sm current-details">
               <li class="description" id="description"></li>
               <li>Feels like: <span id="feels-like"></span></li>
               <li>Humidity: <span id="humidity"></span>%</li>

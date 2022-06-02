@@ -89,3 +89,28 @@ li {
   margin: 10px;
   text-align: center;
 }
+@media (max-width: 768px) {
+  form {
+    margin-bottom: 10px;
+  }
+  .button-location {
+    margin-right: 30px;
+  }
+
+  .city {
+    font-size: 30px;
+  }
+  .location-time {
+    margin: 0 auto;
+  }
+  .current-temp {
+    font-size: 30px;
+  }
+  .projected-forecast {
+    margin: 2px;
+    padding: 5px;
+  }
+  .projected-forecast li {
+    font-size: 10px;
+  }
+}
